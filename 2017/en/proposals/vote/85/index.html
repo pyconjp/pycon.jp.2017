@@ -1,0 +1,771 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<!-- Mirrored from pycon.jp/2017/en/proposals/vote/85/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jun 2020 07:27:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="utf-8" />
+        <title>Vote: Reactive Programming on AWS Lambda in Python | PyCon JP 2017 in TOKYO</title>
+        
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+
+        
+    <link rel="stylesheet" href="https://pycon.jp/2017/site_media/static/cache/css/a69b123b6daf.css" type="text/css" />
+
+    
+        <link rel="stylesheet" href="https://pycon.jp/2017/site_media/static/cache/css/be200b5f77b4.css" type="text/css" media="all" />
+    
+
+    <link rel="stylesheet" href="https://pycon.jp/2017/site_media/static/cache/css/0b73705a6682.css" type="text/css" />
+
+    
+
+
+        
+            <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+            <!--[if lt IE 9]>
+                <script src="/2017/site_media/static/pinax/js/html5shiv.js"></script>
+            <![endif]-->
+        
+
+        
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://pycon.jp/2017/site_media/static/img/ogp_logo_2017.png" />
+    <meta property="og:title" content="Vote: Reactive Programming on AWS Lambda in Python | PyCon JP 2017 in TOKYO" />
+    <meta property="og:url" content="index.html" />
+    <meta property="og:site_name" content="PyCon JP 2017" />
+    <meta property="og:description" content="PyCon JP 2017" />
+
+
+    <link href="https://pycon.jp/2017/site_media/static/img/favicon.ico" rel="shortcut icon" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    
+
+<script type="text/javascript" src="https://pycon.jp/2017/site_media/static/cache/js/ea388955cc03.js"></script>
+
+    
+    <script type="text/javascript">
+        $(function () {
+            var converter = new Attacklab.showdown.converter();
+
+            var mdown = $('#abstract').html();
+            var html = converter.makeHtml(mdown);
+            $('#abstract').html(html);
+
+            var mdown = $('#description').html();
+            var html = converter.makeHtml(mdown);
+            $('#description').html(html);
+
+        });
+    </script>
+
+    <meta name="google-site-verification" content="fG_DG4G4eFtBcgIKht-bJKdirGhDa_51X6yeCS8daDs" />
+
+    </head>
+    <body class="" id="">
+        <div class="">
+
+            
+    
+    <header class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="../../../index.html">
+                    <img src="https://pycon.jp/2017/site_media/static/img/pycon2017-logo-small.png" alt="PyCon JP 2017 in Tokyo" width="100">
+                </a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">language <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                
+                                    <li class=""><a href="https://pycon.jp/2017/ja/proposals/vote/85/"> 日本語 </a></li>
+                                
+                                    <li class="active"><a href="index.html"> English </a></li>
+                                
+                            </ul>
+                        </li>
+                        <!--  -->
+                        
+                        
+
+
+
+<li class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="icon-wrench"></span> <b class="caret"></b></a>
+    <ul class="dropdown-menu">
+    
+        <li><a class="login" href="../../../account/login/index.html">Log in</a></li>
+        <li><a class="signup" href="../../../account/signup/index.html">Sign up</a></li>
+    
+    </ul>
+</li>
+
+                        
+                    </ul>
+                    <ul class="nav">
+                        
+                            
+                            
+                            
+                            
+
+    
+        <li class="dropdown ">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                About
+                <b class="caret"></b>
+            </a>
+            
+                
+<ul class="dropdown-menu">
+    
+        <li >
+            <a href="../../../about/what-is-pyconjp/index.html" >What is PyCon JP?</a>
+        </li>
+    
+        <li >
+            <a href="../../../about/code-of-conduct/index.html" >Code of Conduct</a>
+        </li>
+    
+        <li >
+            <a href="../../../about/summary/index.html" >Summary</a>
+        </li>
+    
+        <li >
+            <a href="../../../about/theme/index.html" >Theme</a>
+        </li>
+    
+        <li >
+            <a href="../../../about/goodies/index.html" >Goodies</a>
+        </li>
+    
+        <li >
+            <a href="#unresolved" >Staff List</a>
+        </li>
+    
+</ul>
+            
+        </li>
+    
+        <li class="dropdown ">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Events
+                <b class="caret"></b>
+            </a>
+            
+                
+<ul class="dropdown-menu">
+    
+        <li >
+            <a href="../../../schedule/index.html" >Schedule</a>
+        </li>
+    
+        <li >
+            <a href="../../../talks/keynote/index.html" >Keynote</a>
+        </li>
+    
+        <li >
+            <a href="../../../schedule/talks/list/index.html" >Talks</a>
+        </li>
+    
+        <li >
+            <a href="../../../events/lightning-talks/index.html" >Lightning Talks</a>
+        </li>
+    
+        <li >
+            <a href="../../../schedule/posters/list/index.html" >Posters</a>
+        </li>
+    
+        <li >
+            <a href="../../../events/sprint/index.html" >Sprint</a>
+        </li>
+    
+        <li >
+            <a href="../../../events/community/index.html" >Community Booth</a>
+        </li>
+    
+        <li >
+            <a href="../../../events/openspace/index.html" >Open Space</a>
+        </li>
+    
+        <li >
+            <a href="../../../events/media-meeting/index.html" >Media Meeting</a>
+        </li>
+    
+        <li >
+            <a href="../../../events/committee-meeting/index.html" >Committee Meeting</a>
+        </li>
+    
+</ul>
+            
+        </li>
+    
+        <li class="dropdown ">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Proposals
+                <b class="caret"></b>
+            </a>
+            
+                
+<ul class="dropdown-menu">
+    
+        <li >
+            <a href="../../vote_list/index.html" >Proposal list</a>
+        </li>
+    
+</ul>
+            
+        </li>
+    
+        <li class="dropdown ">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Speaker
+                <b class="caret"></b>
+            </a>
+            
+                
+<ul class="dropdown-menu">
+    
+        <li >
+            <a href="../../../speaker/list.html" >Speaker lists</a>
+        </li>
+    
+</ul>
+            
+        </li>
+    
+        <li class="dropdown ">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Sponsors
+                <b class="caret"></b>
+            </a>
+            
+                
+<ul class="dropdown-menu">
+    
+        <li >
+            <a href="../../../sponsors/prospectus/index.html" >Prospectus</a>
+        </li>
+    
+        <li >
+            <a href="../../../sponsors/index.html" >PyCon JP Sponsors</a>
+        </li>
+    
+        <li >
+            <a href="#unresolved" >Job Offer</a>
+        </li>
+    
+        <li >
+            <a href="../../../sponsors/whysponsor/index.html" >Why sponsor PyCon JP</a>
+        </li>
+    
+        <li >
+            <a href="../../../sponsors/patrons/index.html" >Patron Sponsors</a>
+        </li>
+    
+</ul>
+            
+        </li>
+    
+        <li class="dropdown ">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Venue
+                <b class="caret"></b>
+            </a>
+            
+                
+<ul class="dropdown-menu">
+    
+        <li >
+            <a href="../../../venue/info/index.html" >Venue Information</a>
+        </li>
+    
+</ul>
+            
+        </li>
+    
+        <li class="dropdown ">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Reports
+                <b class="caret"></b>
+            </a>
+            
+                
+<ul class="dropdown-menu">
+    
+        <li >
+            <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRL87VulU6hVf3jY8BTr7HIWkeA7ocx_zG561cure6IcnsStvE_nvx6hcpaif5cxIfnVl7CVv6LWubx/pubhtml" >Financial Statement</a>
+        </li>
+    
+        <li >
+            <a href="../../../reports/entries/index.html" >Blog entries</a>
+        </li>
+    
+</ul>
+            
+        </li>
+    
+
+                            
+                            
+                        
+                    </ul>
+                </div><!-- /nav-collapse -->
+
+            </div><!-- /container-fluid -->
+        </div><!-- /navbar-inner -->
+
+    </header>
+<!--     <a id="skip" href="#content">Skip to main content</a> -->
+    
+
+
+            
+    <div id="content">
+        
+            <div class="page-head">
+            </div>
+            <div class="page-content">
+                
+                <div class="container">
+
+                    <div class="row">
+                        <div class="span9">
+                          <header class="page-content-header">
+                              <h1></h1>
+                              
+
+<ul class="breadcrumb">
+	
+</ul>
+
+
+                          </header>
+                            
+                            <div class="box">
+                                <div class="box-content">
+    <h1>Talk Proposal Submission</h1>
+    <h2 style="font-size: 14px">
+      If you are interested in attending this talk at PyCon JP 2017, please use the social media share buttons below. We will consider the popularity of the proposals when making our selection.
+    </h2>
+    
+
+    <h2>talk</h2>
+    <h2>Reactive Programming on AWS Lambda in Python(en)</h2>
+    <h3>Speakers</h3>
+    <h4>
+        
+            Keith Yang
+            
+        
+    </h4>
+
+    
+            <div><h3>Audience level:</h3><h4>Intermediate</h4></div>
+            <div><h3>Category:</h3><h4>Cloud</h4></div>
+    
+
+    <h3>Description</h3>
+
+    <div class="description" id="description">Instead of common tutorials of Python Reactive Programming and AWS Lambda, fun, real coding practice, and benefits of &quot;Reactive AWS Lambda&quot; will be focused in this talk by discomposed actions in different aspects and tools, including serverless, functional programming, deployment, testing, debug, and activity/performance monitor. PyFunctional, RxPy, Zappa, and Apex will also be looked at.</div>
+
+    <h3>Objectives</h3>
+
+    <div class="description">As &quot;Details Abstract&quot; section below.</div>
+
+    <h3>Abstract</h3>
+
+    <div class="description" id="abstract">#### Objectives
+
+To paint the blueprint and show real use cases to audience for following perspectives:
+
+- How fun and pain Reactive Programming can be
+- The devil detail of &quot;Reactive&quot;
+- How fun and pain the serverless can be
+- The pitfalls of &quot;Serverless&quot;
+- How it looks like running Reactive Python on AWS Lambda
+- How to decide when it&#39;s good to apply these paradigms
+- How to dig in the detail of used paradigm on debug, test, development, and deployment.</div>
+
+    
+
+ </div>
+                            </div>
+
+
+    <style>
+    #sns_group {}
+    #sns_group ul{
+        list-style-type: none;
+        display: block;
+        margin: 10px 0;
+        padding-top: 10px;
+        border-top: 1px solid #ccc;
+    }
+    #sns_group li{
+        display: inline-block;
+        vertical-align: top;
+    }
+</style>
+<div id="sns_group">
+    <ul>
+        <li class="twitter">
+            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+            <script>!function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                if (!d.getElementById(id)) {
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = p + '://platform.twitter.com/widgets.js';
+                    fjs.parentNode.insertBefore(js, fjs);
+                }
+            }(document, 'script', 'twitter-wjs');</script>
+        </li>
+        <li class="facebook">
+            <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                // The described facebook appid
+                var appID = null;
+
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "http://connect.facebook.net/en_US/sdk.js#xfbml=1&appId=" + appID + "&version=v2.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+            <div class="fb-like" data-href="/2017/en/proposals/vote/85/" data-layout="button_count" data-action="like"
+                 data-show-faces="true" data-share="true"></div>
+        </li>
+        <li class="hatena">
+            <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button"
+               data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja"
+               title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png"
+                                                 alt="このエントリーをはてなブックマークに追加" width="20" height="20"
+                                                 style="border: none;"/></a>
+            <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8"
+                    async="async"></script>
+        </li>
+        <li class="google">
+            <script type="text/javascript" src="https://apis.google.com/js/plusone.js">{lang:'en'}</script>
+            <g:plusone size="medium"></g:plusone>
+        </li>
+    </ul>
+</div>
+
+
+                        </div>
+                        <aside class="span3">
+                            
+                            
+                                
+                                
+                                <div class="sponsor-list">
+                                    <h2>SPONSORS</h2>
+                                    
+                                    
+                                        
+                                            <h3>Diamond</h3>
+                                            
+                                                <a href="https://squeeze-inc.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/squeeze-logo-horizontal_1.png.100x60_q85.png" alt="株式会社SQUEEZE" />
+                                                </a>
+                                            
+                                        
+                                    
+                                        
+                                            <h3>Platinum</h3>
+                                            
+                                                <a href="https://recruit.monotaro.com/?utm_medium=outside_flier&amp;utm_source=pycon.jp&amp;utm_campaign=PyConJP2017">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/logo-PyCon2017.png.100x60_q85.png" alt="株式会社MonotaRO" />
+                                                </a>
+                                            
+                                                <a href="https://engineering.linecorp.com/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/LINE_Text_Logo_TypeA.png.100x60_q85.png" alt="LINE株式会社" />
+                                                </a>
+                                            
+                                                <a href="http://corp.retty.me/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/logo.png.100x60_q85.png" alt="Retty株式会社" />
+                                                </a>
+                                            
+                                        
+                                    
+                                        
+                                            <h3>Gold</h3>
+                                            
+                                                <a href="https://iridge.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/img_logo_2.png.100x60_q85.png" alt="iRidge, Inc." />
+                                                </a>
+                                            
+                                                <a href="http://www.e-seikatsu.info/recruit/graduate/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/いい生活ロゴ正方形.jpg.100x60_q85.jpg" alt="株式会社いい生活" />
+                                                </a>
+                                            
+                                                <a href="https://www.miraclelinux.com/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/MIRACLE-YOKO-nonmessage.gif.100x60_q85.jpg" alt="ミラクル・リナックス株式会社" />
+                                                </a>
+                                            
+                                                <a href="http://scala-com.jp/index.html">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/scom_logo-02.png.100x60_q85.png" alt="株式会社スカラコミュニケーションズ" />
+                                                </a>
+                                            
+                                                <a href="https://visasq.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/logo1_visasq.png.100x60_q85.png" alt="株式会社ビザスク" />
+                                                </a>
+                                            
+                                                <a href="https://nulab-inc.com/ja/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/nulab_logo.png.100x60_q85.png" alt="株式会社ヌーラボ" />
+                                                </a>
+                                            
+                                                <a href="https://www.tis.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/TIS_logomark_hor.jpg.100x60_q85.jpg" alt="TIS株式会社" />
+                                                </a>
+                                            
+                                                <a href="https://pay.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/PAY_JP_2.png.100x60_q85.jpg" alt="PAY.JP" />
+                                                </a>
+                                            
+                                        
+                                    
+                                        
+                                            <h3>Silver</h3>
+                                            
+                                                <a href="http://www.colorful-board.com/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/cb_logo_white.png.100x60_q85.jpg" alt="カラフル・ボード株式会社" />
+                                                </a>
+                                            
+                                                <a href="http://www.beproud.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/beproud_logo_py.png.100x60_q85.png" alt="株式会社ビープラウド" />
+                                                </a>
+                                            
+                                                <a href="http://www.leadinge.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/LEai20170129_1.png.100x60_q85.jpg" alt="株式会社リーディング・エッジ社" />
+                                                </a>
+                                            
+                                                <a href="https://www.nexedi.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/nexedi-logo.png.100x60_q85.jpg" alt="株式会社Nexedi" />
+                                                </a>
+                                            
+                                                <a href="https://tarosky.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/Tarosky-logomark_透過.png.100x60_q85.png" alt="タロスカイ" />
+                                                </a>
+                                            
+                                                <a href="https://yarch.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/yarch.png.100x60_q85.png" alt="ワイアーチ" />
+                                                </a>
+                                            
+                                                <a href="https://jsl.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/JSL_1_1.png.100x60_q85.png" alt="株式会社日本システム技研" />
+                                                </a>
+                                            
+                                                <a href="https://sideci.com/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/SideCI_A_LOGO.png.100x60_q85.png" alt="SideCI" />
+                                                </a>
+                                            
+                                                <a href="http://s.nikkei.com/saiyo">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/nikkei.png.100x60_q85.png" alt="日本経済新聞社" />
+                                                </a>
+                                            
+                                                <a href="https://www.elastic.co/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/elastic-logo-H-full_color.png.100x60_q85.png" alt="Elastic" />
+                                                </a>
+                                            
+                                                <a href="http://datamix.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/DataMix_縦_1.png.100x60_q85.png" alt="株式会社データミックス" />
+                                                </a>
+                                            
+                                                <a href="http://xica.net/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/XICA_ロゴ_1.jpg.100x60_q85.jpg" alt="XICA" />
+                                                </a>
+                                            
+                                                <a href="http://ariseanalytics.com/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/logo_3.png.100x60_q85.png" alt="株式会社 ARISE analytics" />
+                                                </a>
+                                            
+                                                <a href="http://www.find-job.net/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/findjob_logo.png.100x60_q85.png" alt="株式会社ミクシィ・リクルートメント" />
+                                                </a>
+                                            
+                                                <a href="http://jxpress.net/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/logo-512.png.100x60_q85.png" alt="株式会社JX通信社" />
+                                                </a>
+                                            
+                                                <a href="http://www.silveregg.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/silveregg_logo_egg.jpg.100x60_q85.jpg" alt="シルバーエッグ・テクノロジー株式会社" />
+                                                </a>
+                                            
+                                                <a href="https://www.gandi.net/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/Gandi_logo_black.jpg.100x60_q85.jpg" alt="Gandi.net" />
+                                                </a>
+                                            
+                                                <a href="http://www.groove-x.com/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/gx_logo_square_PyCon2017.png.100x60_q85.png" alt="GROOVE X株式会社" />
+                                                </a>
+                                            
+                                                <a href="http://www.hde.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/hde-logo.jpg.100x60_q85.jpg" alt="HDE, Inc." />
+                                                </a>
+                                            
+                                                <a href="https://datasign.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/datasign_logo_rc1.png.100x60_q85.png" alt="株式会社DataSign" />
+                                                </a>
+                                            
+                                                <a href="http://www.creditengine.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/logo_square_1.png.100x60_q85.png" alt="Credit Engine, Inc." />
+                                                </a>
+                                            
+                                                <a href="http://fjct.fujitsu.com/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/fjct_nclogo.png.100x60_q85.png" alt="富士通クラウドテクノロジーズ株式会社" />
+                                                </a>
+                                            
+                                                <a href="https://supership.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/ss_logo.png.100x60_q85.png" alt="Supership株式会社" />
+                                                </a>
+                                            
+                                                <a href="http://www.brainpad.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/BP_Logo_1.png.100x60_q85.png" alt="株式会社ブレインパッド" />
+                                                </a>
+                                            
+                                                <a href="https://www.cmscom.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/CMScomlogoMini.png.100x60_q85.png" alt="株式会社CMSコミュニケーションズ" />
+                                                </a>
+                                            
+                                                <a href="https://slideship.com/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/slideship_wide_navy.png.100x60_q85.png" alt="株式会社slideship" />
+                                                </a>
+                                            
+                                                <a href="https://www.microsoft.com/ja-jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/Microsoft_Logo_1.png.100x60_q85.jpg" alt="日本マイクロソフト株式会社" />
+                                                </a>
+                                            
+                                                <a href="http://spherelinks.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/spherelinks_logo169_1.png.100x60_q85.jpg" alt="スフィアリンクス株式会社" />
+                                                </a>
+                                            
+                                        
+                                    
+                                        
+                                            <h3>Media</h3>
+                                            
+                                                <a href="http://gihyo.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/gihyojp_logo.jpg.100x60_q85.jpg" alt="gihyo.jp" />
+                                                </a>
+                                            
+                                                <a href="https://thinkit.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/thinkit.png.100x60_q85.jpg" alt="Think IT" />
+                                                </a>
+                                            
+                                                <a href="https://www.oreilly.co.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/ORM_logo_box_rgb.png.100x60_q85.jpg" alt="株式会社オライリー・ジャパン" />
+                                                </a>
+                                            
+                                                <a href="https://togetter.com/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/togetter.png.100x60_q85.png" alt="Togetter" />
+                                                </a>
+                                            
+                                                <a href="http://codezine.jp/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/czlogo4web.png.100x60_q85.png" alt="CodeZine" />
+                                                </a>
+                                            
+                                                <a href="http://type.jp/et/feature/">
+                                                    <img src="https://pycon.jp/2017/site_media/media/sponsor_files/ETlogo_2.png.100x60_q85.png" alt="エンジニアtype" />
+                                                </a>
+                                            
+                                        
+                                    
+                                </div>
+                                
+                            
+                            
+                        </aside>
+                    </div>
+
+                </div>
+                
+            </div>
+        
+    </div>
+
+    <footer>
+
+
+        <div class="container">
+        
+            <div class="footer-content">
+                <p class="sns">
+                    <a href="https://www.facebook.com/PyConJP"><img src="https://pycon.jp/2017/site_media/static/img/icon-facebook.png"></a>
+                    <a href="https://twitter.com/pyconj"><img src="https://pycon.jp/2017/site_media/static/img/icon-twitter.png"></a>
+                    <a href="http://pyconjp-fellow.herokuapp.com/" title="Join PyCon JP Fellow on Slack!"><img src="https://pycon.jp/2017/site_media/static/img/icon-slack.png"></a>
+                </p>
+                <p class="footer-venue">
+                  <img src="https://pycon.jp/2017/site_media/static/img/pyconjp-logo.png" alt="PyCon JP Committee">
+                  <img src="https://pycon.jp/2017/site_media/static/img/waseda-x200.png" alt="Waseda University"> <br>
+                  Host: PyCon JP Committee<span> / </span>
+                  Cohost: Global Software Engineering Laboratory, Waseda University
+                </p>
+                <p>
+                  PyCon JP 2017 in Tokyo is a production of the <a href="http://www.pycon.jp/">PyCon JP Committee</a>. Contact <a href="mailto:2017@pycon.jp">2017@pycon.jp</a>
+                </p>
+                <p class="footer-creativeCommons">
+                  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                    <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" />
+                  </a>
+                  This web site is licensed under a
+                  <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+                    Creative Commons Attribution 4.0 International License
+                  </a>
+                </p>
+            </div>
+        
+        </div>
+    </footer>
+
+        </div>
+
+        
+    <script src="https://pycon.jp/2017/site_media/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://pycon.jp/2017/site_media/static/pinax/js/theme.js"></script>
+    <script src="https://cdn.eurie.io/libs/webcomponentsjs/0.7.22/webcomponents-lite.min.js" /></script>
+  <link rel="import" href="https://cdn.eurie.io/components/eurie-public-form/0.2.0/eurie-modal-form.html" />
+
+  <style>
+  .eurie-btn {
+  background-color: #e2aa14;
+  border: none;
+  padding: 8px 35px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+  bottom:-1;
+  right:0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 3px 10px 0 rgba(0, 0, 0, .19)
+}
+  .eurie-btn a {
+  color: #FFFFFF!important
+}
+  </style>
+
+  <eurie-modal-form account-name="pyconjp" api-key="e9f2ec3431d4476eeb5b3627aa2d1390" team-id="Aa32dmMyk2TokT93qsFZXg" class="eurie-btn">CONTACT</eurie-modal-form>
+    
+
+
+        
+  
+  
+
+    </body>
+
+<!-- Mirrored from pycon.jp/2017/en/proposals/vote/85/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 07 Jun 2020 07:27:09 GMT -->
+</html>
