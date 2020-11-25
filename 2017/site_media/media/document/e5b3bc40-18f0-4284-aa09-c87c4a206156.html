@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        VOEZ 稼動後 - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/github-gist.min.css" integrity="sha256-tAflq+ymku3Khs+I/WcAneIlafYgDiOQ9stIHH985Wo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,300italic,300|Source+Serif+Pro|Source+Code+Pro:400,300,500&subset=latin,latin-ext);.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\A0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:758px;margin-top:25px;margin-bottom:-25px;color:#777}.ui-toc{position:fixed;bottom:20px;z-index:10000}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,\\30D2\30E9\30AE\30CE\89D2\30B4 Pro W3,Osaka,Meiryo,\\30E1\30A4\30EA\30AA,MS Gothic,"\FF2D\FF33   \30B4\30B7\30C3\30AF",sans-serif}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,"\FF2D\FF33   \FF30\30B4\30B7\30C3\30AF",sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,\\5FAE\8EDF\6B63\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,\\5FAE\8EDF\6B63\9ED1UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,sans-serif}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,\\5FAE\8F6F\96C5\9ED1UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:contain}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}small span{line-height:22px}small .dropdown{display:inline-block}small .dropdown a:focus,small .dropdown a:hover{text-decoration:none}.unselectable{-moz-user-select:none;-webkit-user-select:none;-o-user-select:none;user-select:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid"><h1 style="" id="voez-稼動後"><a title="voez-稼動後" href="#voez-稼動後" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>VOEZ 稼動後</h1><h1 style="" id="after-voez-launch"><a title="after-voez-launch" href="#after-voez-launch" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>after VOEZ launch</h1><p>how to resolve problems of mobile game server development and service maintenance <img alt=":dizzy:" class="emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/dizzy.png" title=":dizzy:"></p><blockquote style="border-left-color: red;">
+<p><small><i class="fa fa-user"></i> 郭 学聡 Hsueh-Tsung Kuo <i class="fa fa-clock-o"></i> Fri, 09 Jun 2017</small> <span class="color" data-color="red"></span></p>
+</blockquote><hr><h2 style="" id="who-am-i"><a title="who-am-i" href="#who-am-i" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>who am I?</h2><ul>
+<li>programmer from Rayark, a game company in Taiwan</li>
+<li>backend engineer</li>
+<li>usually develop something related to my work in Python, Ruby, Golang, C#</li>
+<li>built almost entire VOEZ game server by myself only</li>
+</ul><hr><h2 style="" id="voez-current-status"><a title="voez-current-status" href="#voez-current-status" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>VOEZ current status</h2><hr><h3 style="" id="spec"><a title="spec" href="#spec" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>spec</h3><ul>
+<li>rhythm game following after famous titles Cytus and Deemo</li>
+<li>profile, save data, achievement, leaderboard… are stored on server</li>
+<li>based on Google Cloud Platform</li>
+</ul><hr><h3 style="" id="resource"><a title="resource" href="#resource" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>resource</h3><ul>
+<li>
+<p>official website: <a target="_blank" href="https://www.rayark.com/g/voez/">https://www.rayark.com/g/voez/</a></p>
+</li>
+<li>
+<p>teaser: <a target="_blank" href="https://youtu.be/Bh6gQyJHbxI">https://youtu.be/Bh6gQyJHbxI</a></p>
+</li>
+<li>
+<p>walkthrough wiki: <a target="_blank" href="http://voez.info/">http://voez.info/</a></p>
+</li>
+<li>
+<p><small>Apple iTunes: <a target="_blank" href="https://itunes.apple.com/jp/app/voez/id1007929736">https://itunes.apple.com/jp/app/voez/id1007929736</a></small></p>
+</li>
+<li>
+<p><small>Google Play: <a target="_blank" href="https://play.google.com/store/apps/details?id=com.rayark.valkyrie">https://play.google.com/store/apps/details?id=com.rayark.valkyrie</a></small></p>
+</li>
+<li>
+<p><small>Nintendo Switch: <a target="_blank" href="https://ec.nintendo.com/JP/ja/titles/70010000000044">https://ec.nintendo.com/JP/ja/titles/70010000000044</a></small></p>
+</li>
+</ul><hr><h3 style="" id="teaser"><a title="teaser" href="#teaser" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>teaser</h3><p></p><div data-videoid="Bh6gQyJHbxI" class="youtube"><iframe src="https://www.youtube.com/embed/Bh6gQyJHbxI" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" frameborder="0"></iframe></div><p></p><hr><h2 style="" id="outline"><a title="outline" href="#outline" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>outline</h2><hr><ol start="3">
+<li>VOEZ current status</li>
+</ol><hr><ol start="5">
+<li>HTTP protocol</li>
+<li>genuine &amp; purchase verification
+<ol>
+<li>clean leaderboard: signature</li>
+<li>legal game play: activation</li>
+</ol>
+</li>
+<li>stability
+<ol>
+<li>principle</li>
+<li>publish order and request order</li>
+<li>database cache mechanism</li>
+<li>reliable inter-server request</li>
+<li>execution resource allocation for request handler and for database</li>
+</ol>
+</li>
+</ol><hr><ol start="8">
+<li>performance
+<ol>
+<li>from database to static file</li>
+<li>statistics</li>
+<li>server operation with CDN</li>
+<li>service downtime and update</li>
+</ol>
+</li>
+<li>timezone
+<ol>
+<li>all about environment variable: TZ</li>
+</ol>
+</li>
+<li>conclusion</li>
+<li>Q&amp;A</li>
+</ol><hr><h2 style="" id="http-protocol"><a title="http-protocol" href="#http-protocol" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>HTTP protocol</h2><hr><p>request</p><pre><code>POST /api/leaderboard/song/add_score HTTP/1.1
+Host: voez-api.rayark.net
+Signature: cHl0aG9uaXN0YQ==
+
+{
+  "token": "593a19bc593a19bc",
+  "player": "pythonista",
+  "timestamp": 1496979900,
+  "score": {
+    "total": 999999.0,
+    ......
+  }
+}
+</code></pre><hr><p>response</p><pre><code>HTTP/1.1 200 OK
+Server: nginx/1.9.12
+Content-Type: application/json; charset=UTF-8
+Content-Length: 22
+Cache-Control: public,s-maxage=300
+Date: Fri, 09 Jun 2017 10:20:30 GMT
+
+{
+    "status": "ok"
+}
+</code></pre><hr><h2 style="" id="genuine"><a title="genuine" href="#genuine" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>genuine</h2><h2 style="" id="amp"><a title="amp" href="#amp" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>&amp;</h2><h2 style="" id="purchase-verification"><a title="purchase-verification" href="#purchase-verification" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>purchase verification</h2><hr><ul>
+<li><s>leaderboard</s> &lt;- fake score</li>
+<li><s>game play</s> &lt;- pirated app &amp; private server</li>
+</ul><hr><h3 style="" id="clean-leaderboard-signature"><a title="clean-leaderboard-signature" href="#clean-leaderboard-signature" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>clean leaderboard: signature</h3><ul>
+<li>request: send request &amp; attach <mark><em>signature</em></mark> <!-- .element: class="fragment" data-fragment-index="1" --></li>
+</ul><hr><pre class="sequence-diagram"><svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 559 460" style="overflow: hidden; position: relative; left: -0.5px; top: -0.350098px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="559" version="1.1" height="460"><desc>Created with Raphaël 2.2.0</desc><defs><path id="raphael-marker-block" d="M5,0 0,2.5 5,5z" stroke-linecap="round"></path><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-objuew0d"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-objxk97y"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker></defs><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="20" x="10"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="30" x="20.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="59" x="51.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">client</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="362" x="10"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="372" x="20.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="401" x="51.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">client</tspan></text><path stroke-width="2" d="M51.5,98L51.5,362" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="20" x="233"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="30" x="243.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="59" x="274.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">server</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="362" x="233"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="372" x="243.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="401" x="274.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">server</tspan></text><path stroke-width="2" d="M274.5,98L274.5,362" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="203" y="94" x="62"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="123" x="163" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">request w/ signature</tspan></text><path stroke-dasharray="none" marker-end="url(#raphael-marker-endblock55-objuew0d)" stroke-width="2" d="M51.5,176C51.5,176,236.52715247869492,176,269.5031830718217,176" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="68" width="173" y="196" x="294.5"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="163" y="201" x="300"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="230" x="381" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">verify signature</tspan></text><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="260" x="132"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="289" x="163" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">status</tspan></text><path stroke-dasharray="none" marker-end="url(#raphael-marker-endblock55-objxk97y)" stroke-width="2" d="M274.5,342C274.5,342,89.47284752130508,342,56.496816928178305,342" stroke="#000000" fill="none" style=""></path></svg></pre><hr><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span></div><div class="code"><span class="hljs-comment"># client side</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sign_message</span><span class="hljs-params">(private_key_string, message)</span>:</span>
+    private_key = Crypto.PublicKey.RSA.importKey(private_key_string)
+    signer = Crypto.Signature.PKCS1_v1_5.new(private_key)
+    message_hash = Crypto.Hash.SHA256.new(message)
+    signature = signer.sign(message_hash)
+    <span class="hljs-keyword">return</span> base64.standard_b64encode(signature).decode(<span class="hljs-string">'utf-8'</span>)
+
+<span class="hljs-comment"># server side</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">verify_message</span><span class="hljs-params">(public_key_string, message, signature_b64)</span>:</span>
+    public_key = Crypto.PublicKey.RSA.importKey(public_key_string)
+    verifier = Crypto.Signature.PKCS1_v1_5.new(public_key)
+    message_hash = Crypto.Hash.SHA256.new(message)
+    signature = base64.standard_b64decode(signature_b64.encode(<span class="hljs-string">'utf-8'</span>))
+    <span class="hljs-keyword">return</span> verifier.verify(message_hash, signature)
+</div></div></code></pre><hr><h3 style="" id="legal-game-play-activation"><a title="legal-game-play-activation" href="#legal-game-play-activation" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>legal game play: activation</h3><ul>
+<li>request: send request &amp; RSA encrypted request hash plus <strong>nonce</strong> (a random variable)</li>
+<li>response: send response &amp; attach signature
+<ul>
+<li><mark>sign response hash plus <strong>nonce</strong></mark> <!-- .element: class="fragment" data-fragment-index="1" --></li>
+<li><mark>client verify signature</mark> <!-- .element: class="fragment" data-fragment-index="2" --></li>
+</ul>
+</li>
+</ul><hr><pre class="sequence-diagram"><svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 1050.5 548" style="overflow: hidden; position: relative; left: -0.5px; top: -0.466797px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="1050.5" version="1.1" height="548"><desc>Created with Raphaël 2.2.0</desc><defs><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj094wx"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-objrej1o"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker></defs><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="20" x="171.5"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="30" x="182"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="59" x="213" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">client</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="450" x="171.5"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="460" x="182"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="489" x="213" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">client</tspan></text><path stroke-width="2" d="M213,98L213,450" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="20" x="694.5"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="30" x="705"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="59" x="736" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">server</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="450" x="694.5"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="460" x="705"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="489" x="736" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">server</tspan></text><path stroke-width="2" d="M736,98L736,450" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="503" y="94" x="223.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="123" x="474.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">request w/ RSA.encrypt(merge(request.hash, nonce))</tspan></text><path stroke-dasharray="none" marker-end="url(#raphael-marker-endblock55-obj094wx)" stroke-width="2" d="M213,176C213,176,677.4686460494995,176,730.9914001841098,176" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="68" width="203" y="196" x="756"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="193" y="201" x="761.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="230" x="857.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">verify request.hash</tspan></text><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="493" y="260" x="228.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="289" x="474.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">response w/ RSA.sign(merge(response.hash, nonce))</tspan></text><path stroke-dasharray="none" marker-end="url(#raphael-marker-endblock55-objrej1o)" stroke-width="2" d="M736,342C736,342,271.5313539505005,342,218.0085998158902,342" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="68" width="173" y="362" x="20"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="163" y="367" x="25.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="396" x="106.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">verify signature</tspan></text></svg></pre><hr><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span></div><div class="code"><span class="hljs-comment"># client side</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">encrypt_message</span><span class="hljs-params">(public_key_string, message)</span>:</span>
+    public_key = Crypto.PublicKey.RSA.importKey(public_key_string)
+    cipher = Crypto.Cipher.PKCS1_OAEP.new(public_key)
+    encrypted_message = cipher.encrypt(message)
+    <span class="hljs-keyword">return</span> base64.standard_b64encode(encrypted_message).decode(<span class="hljs-string">'utf-8'</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">encrypt_message_hash_with_nonce</span><span class="hljs-params">(public_key_string, message, nonce)</span>:</span>
+    message_hash_digest = Crypto.Hash.SHA256.new(message).digest() <span class="hljs-comment"># this computation may take too long</span>
+    <span class="hljs-keyword">return</span> encrypt_message(public_key_string, merge(message_hash_digest, nonce))
+
+<span class="hljs-comment"># server side</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decrypt_message</span><span class="hljs-params">(private_key_string, encrypted_message_b64)</span>:</span>
+    private_key = Crypto.PublicKey.RSA.importKey(private_key_string)
+    cipher = Crypto.Cipher.PKCS1_OAEP.new(private_key)
+    encrypted_message = base64.standard_b64decode(encrypted_message_b64.encode(<span class="hljs-string">'utf-8'</span>))
+    <span class="hljs-keyword">return</span> cipher.decrypt(encrypted_message)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">verify_encrypted_message_hash_and_extract_nonce</span><span class="hljs-params">(private_key_string, message, encrypted_message_hash_with_nonce_b64)</span>:</span>
+    message_hash_with_nonce = decrypt_message(private_key_string, encrypted_message_hash_with_nonce_b64)
+    message_hash_digest = Crypto.Hash.SHA256.new(message).digest() <span class="hljs-comment"># this computation may take too long</span>
+    (decrypted_message_hash_digest, nonce) = unmerge(message_hash_with_nonce)
+    <span class="hljs-keyword">return</span> (decrypted_message_hash_digest == message_hash_digest, nonce)
+</div></div></code></pre><hr><h2 style="" id="stability"><a title="stability" href="#stability" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>stability</h2><hr><h3 style="" id="principle"><a title="principle" href="#principle" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>principle</h3><ul>
+<li>always read &amp; write game data to DB atomically
+<ul>
+<li>available DB updating status
+<ul>
+<li>before request:
+<ul>
+<li>start transaction, not update yet</li>
+</ul>
+</li>
+<li>after request:
+<ul>
+<li>success: update completed</li>
+<li>fail: not update</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>caution:
+<ul>
+<li>impossible to follow this rule everywhere</li>
+</ul>
+</li>
+</ul><hr><h3 style="" id="publish-order-and-request-order"><a title="publish-order-and-request-order" href="#publish-order-and-request-order" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>publish order and request order</h3><ul>
+<li>request order
+<ul>
+<li>client read game info A, then B, then C</li>
+</ul>
+</li>
+<li>publish order <!-- .element: class="fragment" data-fragment-index="1" -->
+<ul>
+<li>publish game info C, then B, then A</li>
+<li>remove game info A, then B, then C</li>
+</ul>
+</li>
+<li>the above principle is suitable for database and online resource distribution <!-- .element: class="fragment" data-fragment-index="2" --></li>
+</ul><hr><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span></div><div class="code"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Revision</span><span class="hljs-params">(mongo_engine.Document)</span>:</span> <span class="hljs-comment"># read this 1st, publish this 2nd, remove this 1st</span>
+    revision_id = mongo_engine.StringField(required=<span class="hljs-keyword">True</span>)
+    timestamp = mongo_engine.DateTimeField(required=<span class="hljs-keyword">True</span>)
+    name = mongo_engine.StringField(required=<span class="hljs-keyword">True</span>)
+    meta = {
+        <span class="hljs-string">'indexes'</span>: [
+            {
+                <span class="hljs-string">'fields'</span>: [<span class="hljs-string">'timestamp'</span>],
+                <span class="hljs-string">'unique'</span>: <span class="hljs-keyword">True</span>,
+            },
+        ],
+    }
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SongAssetMeta</span><span class="hljs-params">(mongo_engine.Document)</span>:</span> <span class="hljs-comment"># read this 2nd, publish this 1st, remove this 2nd</span>
+    revision_id = mongo_engine.StringField(required=<span class="hljs-keyword">True</span>)
+    song_id = mongo_engine.StringField(required=<span class="hljs-keyword">True</span>)
+    asset_set_checksum = mongo_engine.StringField(required=<span class="hljs-keyword">True</span>)
+    song_cls = mongo_engine.StringField(required=<span class="hljs-keyword">True</span>)
+    song_pack_id = mongo_engine.StringField(required=<span class="hljs-keyword">False</span>)
+    song_title = mongo_engine.StringField(required=<span class="hljs-keyword">True</span>)
+    meta = {
+        <span class="hljs-string">'indexes'</span>: [
+            {
+                <span class="hljs-string">'fields'</span>: [<span class="hljs-string">'revision_id'</span>, <span class="hljs-string">'song_id'</span>],
+                <span class="hljs-string">'unique'</span>: <span class="hljs-keyword">True</span>,
+            },
+        ]
+    }
+</div></div></code></pre><hr><h3 style="" id="database-cache-mechanism"><a title="database-cache-mechanism" href="#database-cache-mechanism" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>database cache mechanism</h3><ul>
+<li>database in HDD or SSD: slow</li>
+<li>Redis or Memcached in RAM: fast</li>
+</ul><hr><ul>
+<li>workable mechanism in concurrency environment
+<ol>
+<li>try to read cache</li>
+<li>if cache missed, read original data and update data to cache</li>
+<li>read cache and return data</li>
+</ol>
+</li>
+<li>caution
+<ul>
+<li>cache should be set or get atomically</li>
+<li>don’t build cache from previous cache content
+<ul>
+<li>ex: increase &amp; drecrease counter</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><hr><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span></div><div class="code"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SongAssetMetaCache</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">set_meta</span><span class="hljs-params">(self, revision_id, song_id, asset_set_checksum, song_cls, song_pack_id)</span>:</span>
+        meta_key = <span class="hljs-string">'song_asset_meta:%s:%s'</span> % (revision_id, song_id)
+        song_meta = {<span class="hljs-string">'asset_set_checksum'</span>: asset_set_checksum, <span class="hljs-string">'song_cls'</span>: song_cls, <span class="hljs-string">'song_pack_id'</span>: song_pack_id}
+        self.strict_redis.hmset(meta_key, song_meta)
+        self.strict_redis.expire(meta_key, self.cache_expire_time)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_meta</span><span class="hljs-params">(self, revision_id, song_id)</span>:</span>
+        <span class="hljs-keyword">return</span> self.strict_redis.hmget(revision_id, song_id)
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SongAssetMetaModel</span><span class="hljs-params">(object)</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">reconstruct_cache</span><span class="hljs-params">(self, revision_id, song_id)</span>:</span>
+        <span class="hljs-keyword">try</span>:
+            song_asset_meta = SongAssetMeta.objects.get(revision_id=revision_id, song_id=song_id)
+        <span class="hljs-keyword">except</span> SongAssetMeta.DoesNotExist:
+            SongAssetMeta.delete(revision_id, song_id)
+        <span class="hljs-keyword">else</span>:
+            self.__song_asset_meta_cache.set_meta(song_asset_meta.revision_id, song_asset_meta.song_id,
+                song_asset_meta.asset_set_checksum, song_asset_meta.song_cls, song_asset_meta.song_pack_id)
+
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_song_asset_meta</span><span class="hljs-params">(self, revision_id, song_id)</span>:</span>
+        song_asset_meta = self.__song_asset_meta_cache.get_meta(revision_id, song_id)
+        <span class="hljs-keyword">if</span> song_asset_meta <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+            self.reconstruct_cache(revision_id, song_id)
+            song_asset_meta = self.__song_asset_meta_cache.get_meta(revision_id, song_id)
+        <span class="hljs-keyword">return</span> song_asset_meta
+</div></div></code></pre><hr><h3 style="" id="reliable-inter-server-request"><a title="reliable-inter-server-request" href="#reliable-inter-server-request" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>reliable inter-server request</h3><ul>
+<li>inter server connection and transaction:
+<ol>
+<li>server A calculate data</li>
+<li>server A start transaction and write data</li>
+<li>server A request server B
+<ul>
+<li>success: server A finish transaction</li>
+<li>fail: server A revert transaction</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul><hr><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span></div><div class="code"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">consume</span><span class="hljs-params">(player_access_token)</span>:</span>
+    failure_count = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>:
+        <span class="hljs-keyword">try</span>:
+            purchase.consume_coin(player_access_token)
+        <span class="hljs-keyword">except</span> (requests.exceptions.RequestException, server_error.ServerError):
+            failure_count += <span class="hljs-number">1</span>
+            <span class="hljs-keyword">if</span> failure_count &gt;= <span class="hljs-number">3</span>:
+                <span class="hljs-keyword">raise</span>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">break</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">gacha</span><span class="hljs-params">(player_access_token)</span>:</span>
+    selected_avatars = randomly_select_avatars(player_access_token)
+    transaction = begin_appending_avatars_to_player_data(player_access_token, selected_avatars)
+    <span class="hljs-keyword">try</span>:
+        consume(player_access_token)
+    <span class="hljs-keyword">except</span>:
+        revert_appending_avatars_to_player_data(transaction)
+        <span class="hljs-keyword">raise</span>
+    <span class="hljs-keyword">else</span>:
+        finish_appending_avatars_to_player_data(transaction)
+</div></div></code></pre><hr><h3 style="" id="execution-resource-allocation-for-request-handler-and-for-database"><a title="execution-resource-allocation-for-request-handler-and-for-database" href="#execution-resource-allocation-for-request-handler-and-for-database" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>execution resource allocation for request handler and for database</h3><ul>
+<li>database processing speed per request should be superior to request handler
+<ul>
+<li class="task-list-item"><input disabled="disabled" class="task-list-item-checkbox" checked="" type="checkbox"><label></label>queue huge requests with load balancer but keep database server reliable</li>
+</ul>
+</li>
+</ul><hr><p><img src="https://i.imgur.com/0LZjGBO.jpg" alt=""><br>
+<a target="_blank" href="https://i.imgur.com/0LZjGBO.jpg">https://i.imgur.com/0LZjGBO.jpg</a></p><hr><h2 style="" id="performance"><a title="performance" href="#performance" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>performance</h2><hr><h4 id="python-is-so-slow"><a title="python-is-so-slow" href="#python-is-so-slow" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>Python is so SLOW</h4><blockquote style="border-left-color: red;">
+<p><img alt=":hash:" class="emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/hash.png" title=":hash:"> “skip Python code execution<br>
+if you can”<br>
+<small><i class="fa fa-user"></i> Hsueh-Tsung Kuo <i class="fa fa-clock-o"></i> Fri, 09 Jun 2017</small> <span class="color" data-color="red"></span></p>
+<!-- .element: class="fragment" data-fragment-index="1" -->
+</blockquote><hr><h3 style="" id="from-database-to-static-file"><a title="from-database-to-static-file" href="#from-database-to-static-file" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>from database to static file</h3><ul>
+<li>announce public game info from static file</li>
+<li>only per-user data is served from database</li>
+</ul><hr><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span></div><div class="code"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">publish_asset_revision</span><span class="hljs-params">(revision)</span>:</span>
+    song_list = [process(song) <span class="hljs-keyword">for</span> song <span class="hljs-keyword">in</span> SongAssetMeta.objects(revision_id=revision.id)]
+    song_list_json = json.dumps(song_list, ensure_ascii=<span class="hljs-keyword">False</span>, default=bson.json_util.default)
+    location = get_cloud_storage_location()
+    <span class="hljs-keyword">with</span> io.BytesIO(json_data) <span class="hljs-keyword">as</span> fp:
+        cloud_storage.upload_file(location, fp, <span class="hljs-string">'application/json'</span>, len(json_data))
+</div></div></code></pre><hr><h3 style="" id="statistics"><a title="statistics" href="#statistics" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>statistics</h3><ul>
+<li>what can we do when exporting log to Google BigQuery
+<ul>
+<li>data analysis (boring)</li>
+<li>find unusual behavior and alert maintainer (help DevOps)</li>
+<li>collect &amp; announce seasonal event result (!?)</li>
+</ul>
+</li>
+</ul><hr><h4 id="collect-amp-announce-seasonal-event-result"><a title="collect-amp-announce-seasonal-event-result" href="#collect-amp-announce-seasonal-event-result" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>collect &amp; announce seasonal event result</h4><ul>
+<li>run script with specific intervals (using crontab)
+<ul>
+<li>run BigQuery and collect result</li>
+<li>save result to Google Cloud Storage and make it public</li>
+</ul>
+</li>
+</ul><hr><h3 style="" id="server-operation-with-cdn"><a title="server-operation-with-cdn" href="#server-operation-with-cdn" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>server operation with CDN</h3><pre class="sequence-diagram"><svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 599 860" style="overflow: hidden; position: relative; left: -0.5px; top: -0.133789px;" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="599" version="1.1" height="860"><desc>Created with Raphaël 2.2.0</desc><defs><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-objdmwk4"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj85qs3"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-objuhzbm"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-objaii4i"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-objq45wy"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker><marker refY="2.5" refX="2.5" orient="auto" markerWidth="5" markerHeight="5" id="raphael-marker-endblock55-obj9vqpk"><use stroke="none" fill="#000" stroke-width="1.0000" transform="rotate(180 2.5 2.5) scale(1,1)" xlink:href="#raphael-marker-block"></use></marker></defs><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="20" x="10"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="30" x="20.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="59" x="51.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">client</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="762" x="10"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="772" x="20.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="801" x="51.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">client</tspan></text><path stroke-width="2" d="M51.5,98L51.5,762" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="53" y="20" x="358"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="33" y="30" x="368.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="59" x="384.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">CDN</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="53" y="762" x="358"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="33" y="772" x="368.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="801" x="384.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">CDN</tspan></text><path stroke-width="2" d="M384.5,98L384.5,762" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="20" x="486"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="30" x="496.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="59" x="527.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">server</tspan></text><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="78" width="83" y="762" x="486"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="63" y="772" x="496.5"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="801" x="527.5" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">server</tspan></text><path stroke-width="2" d="M527.5,98L527.5,762" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="93" y="94" x="172"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="123" x="218" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">request 1</tspan></text><path stroke-dasharray="none" marker-end="url(#raphael-marker-endblock55-objdmwk4)" stroke-width="2" d="M51.5,176C51.5,176,337.9592989087105,176,379.5014921586553,176" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="68" width="113" y="196" x="251.5"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="103" y="201" x="257"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="230" x="308" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">cache miss</tspan></text><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="93" y="260" x="410"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="289" x="456" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">request 1</tspan></text><path stroke-dasharray="6,2" marker-end="url(#raphael-marker-endblock55-obj85qs3)" stroke-width="2" d="M384.5,342C384.5,342,497.1844244003296,342,522.4944025371224,342" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="103" y="338" x="405"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="367" x="456" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">response 1</tspan></text><path stroke-dasharray="6,2" marker-end="url(#raphael-marker-endblock55-objuhzbm)" stroke-width="2" d="M527.5,420C527.5,420,414.8155755996704,420,389.50559746287763,420" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="103" y="416" x="167"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="445" x="218" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">response 1</tspan></text><path stroke-dasharray="none" marker-end="url(#raphael-marker-endblock55-objaii4i)" stroke-width="2" d="M384.5,498C384.5,498,98.04070109128952,498,56.49850784134469,498" stroke="#000000" fill="none" style=""></path><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="93" y="494" x="172"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="523" x="218" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">request 2</tspan></text><path stroke-dasharray="none" marker-end="url(#raphael-marker-endblock55-objq45wy)" stroke-width="2" d="M51.5,576C51.5,576,337.9592989087105,576,379.5014921586553,576" stroke="#000000" fill="none" style=""></path><rect stroke-width="2" style="" stroke="#000000" fill="none" ry="0" rx="0" height="68" width="103" y="596" x="404.5"></rect><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="93" y="601" x="410"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="630" x="456" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">cache hit</tspan></text><rect style="" stroke="none" fill="#ffffff" ry="0" rx="0" height="58" width="313" y="660" x="62"></rect><text fill="#000000" stroke="none" font-size="16px" font-family="Andale Mono, monospace" text-anchor="middle" y="689" x="218" style="text-anchor: middle; font-family: Andale Mono,monospace; font-size: 16px;"><tspan dy="5">response 2 (same as response 1)</tspan></text><path stroke-dasharray="none" marker-end="url(#raphael-marker-endblock55-obj9vqpk)" stroke-width="2" d="M384.5,742C384.5,742,98.04070109128952,742,56.49850784134469,742" stroke="#000000" fill="none" style=""></path></svg></pre><hr><h4 id="headers-to-operating-with-cdn"><a title="headers-to-operating-with-cdn" href="#headers-to-operating-with-cdn" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>headers to operating with CDN</h4><pre><code>Cache-Control: public,s-maxage=300
+Date: Fri, 09 Jun 2017 10:20:30 GMT
+</code></pre><hr><h4 id="tips-when-operating-with-cdn"><a title="tips-when-operating-with-cdn" href="#tips-when-operating-with-cdn" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>tips when operating with CDN</h4><ul>
+<li>asset files
+<ul>
+<li>different revisions of asset files should be located at individual URLs
+<ul>
+<li>URL must contains revision ID or checksum</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>entry data which lists asset files
+<ul>
+<li>attach expire time via <strong>Cache-Control</strong> <strong>Expires</strong></li>
+<li>CDN will cache contents until expired</li>
+<li>client can use expire time as refresh timer
+<ul>
+<li>ex: back to main menu &amp; display updated game event</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><hr><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span></div><div class="code"><span class="hljs-meta">@app.route('/api/asset/asset_info/&lt;directory&gt;/&lt;file_name&gt;', methods=('GET',))</span>
+<span class="hljs-meta">@cache_control(get_cdn_cache_maxage())</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_asset_info</span><span class="hljs-params">(directory, file_name)</span>:</span>
+    <span class="hljs-comment"># handle asset info</span>
+    <span class="hljs-keyword">return</span> flask.Response(response=asset_info_json_data, mimetype=<span class="hljs-string">'application/json'</span>)
+
+<span class="hljs-meta">@app.route('/api/asset/song_list', methods=('GET',)</span>
+template_response_headers()
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_song_list</span><span class="hljs-params">()</span>:</span>
+    remaining_second = get_current_song_list_remaining_second()
+    cache_maxage = min(remaining_second, get_cdn_cache_maxage())
+    <span class="hljs-comment"># handle song list</span>
+    response = flask.Response(response=song_list_json_data, mimetype=<span class="hljs-string">'application/json'</span>)
+    add_precise_cache_control_to_headers(response.headers, cache_maxage)
+    <span class="hljs-keyword">return</span> response
+</div></div></code></pre><hr><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span></div><div class="code"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">__add_cache_control_to_headers</span><span class="hljs-params">(headers, s_maxage)</span>:</span>
+    headers[<span class="hljs-string">'Cache-Control'</span>] = <span class="hljs-string">'public,s-maxage=%d'</span> % (s_maxage,)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">add_precise_cache_control_to_headers</span><span class="hljs-params">(headers, s_maxage)</span>:</span>
+    __add_cache_control_to_headers(headers, s_maxage)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">template_response_headers</span><span class="hljs-params">(headers={})</span>:</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorator</span><span class="hljs-params">(func)</span>:</span>
+<span class="hljs-meta">        @wraps(func)</span>
+        <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorated_function</span><span class="hljs-params">(*args, **kwargs)</span>:</span>
+            flask.g.current_unix_timestamp = time.time()
+            response = flask.make_response(func(*args, **kwargs))
+            original_headers = response.headers
+            <span class="hljs-keyword">for</span> (header, value) <span class="hljs-keyword">in</span> headers.items():
+                original_headers.setdefault(header, value)
+            original_headers.setdefault(<span class="hljs-string">'Date'</span>, werkzeug.http.http_date(flask.g.current_unix_timestamp))
+            <span class="hljs-keyword">return</span> response
+        <span class="hljs-keyword">return</span> decorated_function
+    <span class="hljs-keyword">return</span> decorator
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">cache_control</span><span class="hljs-params">(s_maxage)</span>:</span>
+    headers = {}
+    __add_cache_control_to_headers(headers, s_maxage)
+    <span class="hljs-keyword">return</span> template_response_headers(headers)
+</div></div></code></pre><hr><h3 style="" id="service-downtime-and-update"><a title="service-downtime-and-update" href="#service-downtime-and-update" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>service downtime and update</h3><ul>
+<li>cachable: GET 200, 203, 300, 301, 302, 307, 410 (when using Google CDN)</li>
+<li>downtime: 503 (non-cachable: even if CDN exists, success HTTP response will be sent to client as long as server become alive again)</li>
+<li>update: 410 (cachable: CDN will tell client “this path is abandoned” without bothering original server)</li>
+</ul><hr><h2 style="" id="timezone"><a title="timezone" href="#timezone" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>timezone</h2><hr><h3 style="" id="all-about-environment-variable-tz"><a title="all-about-environment-variable-tz" href="#all-about-environment-variable-tz" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>all about environment variable: TZ</h3><p><img alt=":100:" class="emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/100.png" title=":100:"> the incredible variable:</p><h1 style="" id="tzasiataipei"><a title="tzasiataipei" href="#tzasiataipei" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>TZ=Asia/Taipei <!-- .element: class="fragment" data-fragment-index="1" --></h1><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span></div><div class="code">os.environ[<span class="hljs-string">'TZ'</span>] = <span class="hljs-string">'Europe/Berlin'</span>
+time.tzset()
+</div></div></code></pre><hr><h3 style="" id="all-about-environment-variable-tz1"><a title="all-about-environment-variable-tz1" href="#all-about-environment-variable-tz1" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>all about environment variable: TZ</h3><ul>
+<li>if you want to announce event and calculate login day accumulation belong to localtime, set TZ to timezone to which you want to refer.</li>
+<li>if daylight saving time is applied in this timezone, then UTC offset of this timezone will vary, and this variation will automatically follow rules of this timezone or country.</li>
+</ul><hr><pre><code class="python hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span></div><div class="code"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_utc_offset_in_second</span><span class="hljs-params">(timestamp)</span>:</span>
+    struct_time = time.localtime(timestamp)
+    <span class="hljs-keyword">return</span> calendar.timegm(struct_time)-int(time.mktime(struct_time))
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_utc_offset_in_timedelta</span><span class="hljs-params">(timestamp)</span>:</span>
+    <span class="hljs-keyword">return</span> datetime.datetime.fromtimestamp(timestamp)-datetime.datetime.utcfromtimestamp(timestamp)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_unix_epoch_day_in_day</span><span class="hljs-params">(timestamp, utc_offset_in_second, local_day_boundary_in_second=None)</span>:</span>
+    <span class="hljs-keyword">if</span> local_day_boundary_in_second <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+        local_day_boundary_in_second = <span class="hljs-number">0</span>
+    <span class="hljs-keyword">return</span> (timestamp+utc_offset_in_second-local_day_boundary_in_second)//<span class="hljs-number">86400</span>
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_unix_epoch_day_in_datetime</span><span class="hljs-params">(datetime_obj, utc_offset_in_timedelta, local_day_boundary_in_timedelta=None)</span>:</span>
+    <span class="hljs-keyword">if</span> local_day_boundary_in_timedelta <span class="hljs-keyword">is</span> <span class="hljs-keyword">None</span>:
+        local_day_boundary_in_timedelta = datetime.timedelta()
+    <span class="hljs-keyword">return</span> (datetime_obj+utc_offset_in_timedelta-local_day_boundary_in_timedelta).replace(hour=<span class="hljs-number">0</span>, minute=<span class="hljs-number">0</span>, second=<span class="hljs-number">0</span>, microsecond=<span class="hljs-number">0</span>)
+</div></div></code></pre><hr><h2 style="" id="conclusion"><a title="conclusion" href="#conclusion" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>conclusion</h2><hr><blockquote style="border-left-color: red;">
+<p><img alt=":hash:" class="emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/hash.png" title=":hash:"> “don’t repeat the same mistakes we did before!”<br>
+<small><i class="fa fa-user"></i> Hsueh-Tsung Kuo <i class="fa fa-clock-o"></i> Fri, 09 Jun 2017</small> <span class="color" data-color="red"></span></p>
+</blockquote><hr><h3 style="" id="special-thanks"><a title="special-thanks" href="#special-thanks" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>special thanks</h3><ul>
+<li>Rayark Inc.
+<ul>
+<li>CTO &amp; CIO</li>
+<li>VOEZ team</li>
+<li>backend team</li>
+<li>QA team</li>
+<li>customer service team</li>
+<li>IT team</li>
+<li>other teams</li>
+</ul>
+</li>
+<li>iKala Interactive Media Inc.</li>
+</ul><hr><h2 style="" id="qampa"><a title="qampa" href="#qampa" class="anchor hidden-xs"><span class="octicon octicon-link"></span></a>Q&amp;A</h2><hr><style>
+
+.reveal code {
+    font-size: 12px !important;
+    line-height: 1.2;
+}
+
+.rightpart{
+    float:right;
+    width:50%;
+}
+
+.leftpart{
+    margin-right: 50% !important;
+    height:50%;
+}
+.reveal section img { background:none; border:none; box-shadow:none; }
+p.blo {
+	font-size: 50px !important;
+	background:#B6BDBB;
+	border:1px solid silver;
+	display:inline-block;
+	padding:0.5em 0.75em;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px #666;
+}
+
+p.blo1 {
+	background: #c7c2bb;
+}
+p.blo2 {
+	background: #b8c0c8;
+}
+p.blo3 {
+	background: #c7cedd;
+}
+
+p.bloT {
+	font-size: 60px !important;
+	background:#B6BDD3;
+	border:1px solid silver;
+	display:inline-block;
+	padding:0.5em 0.75em;
+	border-radius: 8px;
+	box-shadow: 1px 2px 5px #333;
+}
+p.bloA {
+	background: #B6BDE3;
+}
+p.bloB {
+	background: #E3BDB3;
+}
+
+.slide-number{
+	margin-bottom:10px !important;
+	width:100%;
+	text-align:center;
+	font-size:25px !important;
+	background-color:transparent !important;
+}
+iframe.myclass{
+	width:100px;
+	height:100px;
+	bottom:0;
+	left:0;
+	position:fixed;
+	border:none;
+	z-index:99999;
+}
+h1.raw {
+	color: #fff;
+	background-image: linear-gradient(90deg,#f35626,#feab3a);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: hue 5s infinite linear;
+}
+@keyframes hue {
+	from {
+	  filter: hue-rotate(0deg);
+	}
+	to {
+	  filter: hue-rotate(360deg);
+	}
+}
+.progress{
+height:14px !important;
+}
+
+.progress span{
+height:14px !important;
+background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAMCAIAAAAs6UAAAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QUNCQzIyREQ0QjdEMTFFMzlEMDM4Qzc3MEY0NzdGMDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QUNCQzIyREU0QjdEMTFFMzlEMDM4Qzc3MEY0NzdGMDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpBQ0JDMjJEQjRCN0QxMUUzOUQwMzhDNzcwRjQ3N0YwOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpBQ0JDMjJEQzRCN0QxMUUzOUQwMzhDNzcwRjQ3N0YwOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PovDFgYAAAAmSURBVHjaYvjPwMAAxjMZmBhA9H8INv4P4TPM/A+m04zBNECAAQBCWQv9SUQpVgAAAABJRU5ErkJggg==") repeat-x !important;
+
+}
+
+.progress span:after,
+.progress span.nyancat{
+	content: "";
+	background: url('data:image/gif;base64,R0lGODlhIgAVAKIHAL3/9/+Zmf8zmf/MmZmZmf+Z/wAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/wtYTVAgRGF0YVhNUDw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpDMkJBNjY5RTU1NEJFMzExOUM4QUM2MDAwNDQzRERBQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCREIzOEIzMzRCN0IxMUUzODhEQjgwOTYzMTgyNTE0QiIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCREIzOEIzMjRCN0IxMUUzODhEQjgwOTYzMTgyNTE0QiIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkM1QkE2NjlFNTU0QkUzMTE5QzhBQzYwMDA0NDNEREFDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkMyQkE2NjlFNTU0QkUzMTE5QzhBQzYwMDA0NDNEREFDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkECQcABwAsAAAAACIAFQAAA6J4umv+MDpG6zEj682zsRaWFWRpltoHMuJZCCRseis7xG5eDGp93bqCA7f7TFaYoIFAMMwczB5EkTzJllEUttmIGoG5bfPBjDawD7CsJC67uWcv2CRov929C/q2ZpcBbYBmLGk6W1BRY4MUDnMvJEsBAXdlknk2fCeRk2iJliAijpBlEmigjR0plKSgpKWvEUheF4tUZqZID1RHjEe8PsDBBwkAIfkECQcABwAsAAAAACIAFQAAA6B4umv+MDpG6zEj682zsRaWFWRpltoHMuJZCCRseis7xG5eDGp93TqS40XiKSYgTLBgIBAMqE/zmQSaZEzns+jQ9pC/5dQJ0VIv5KMVWxqb36opxHrNvu9ptPfGbmsBbgSAeRdydCdjXWRPchQPh1hNAQF4TpM9NnwukpRyi5chGjqJEoSOIh0plaYsZBKvsCuNjY5ptElgDyFIuj6+vwcJACH5BAkHAAcALAAAAAAiABUAAAOfeLrc/vCZSaudUY7Nu99GxhhcYZ7oyYXiQQ5pIZgzCrYuLMd8MbAiUu802flYGIhwaCAQDKpQ86nUoWqF6dP00wIby572SXE6vyMrlmhuu9GKifWaddvNQAtszXYCxgR/Zy5jYTFeXmSDiIZGdQEBd06QSBQ5e4cEkE9nnZQaG2J4F4MSLx8rkqUSZBeurhlTUqsLsi60DpZxSWBJugcJACH5BAkHAAcALAAAAAAiABUAAAOgeLrc/vCZSaudUY7Nu99GxhhcYZ7oyYXiQQ5pIZgzCrYuLMd8MbAiUu802flYGIhwaCAQDKpQ86nUoWqF6dP00wIby572SXE6vyMrlmhuu9GuifWaddvNwMkZtmY7AWMEgGcKY2ExXl5khFMVc0Z1AQF3TpJShDl8iASST2efloV5JTyJFpgOch8dgW9KZxexshGNLqgLtbW0SXFwvaJfCQAh+QQJBwAHACwAAAAAIgAVAAADoXi63P7wmUmrnVGOzbvfRsYYXGGe6MmF4kEOaSGYMwq2LizHfDGwIlLPNKGZfi6gZmggEAy2iVPZEKZqzakq+1xUFFYe90lxTsHmim6HGpvf3eR7skYJ3PC5tyystc0AboFnVXQ9XFJTZIQOYUYFTQEBeWaSVF4bbCeRk1meBJYSL3WbaReMIxQfHXh6jaYXsbEQni6oaF21ERR7l0ksvA0JACH5BAkHAAcALAAAAAAiABUAAAOeeLrc/vCZSaudUY7Nu99GxhhcYZ7oyYXiQQ5pIZgzCrYuLMfFlA4hTITEMxkIBMOuADwmhzqeM6mashTCXKw2TVKQyKuTRSx2wegnNkyJ1ozpOFiMLqcEU8BZHx6NYW8nVlZefQ1tZgQBAXJIi1eHUTRwi0lhl48QL0sogxaGDhMlUo2gh14fHhcVmnOrrxNqrU9joX21Q0IUElm7DQkAIfkECQcABwAsAAAAACIAFQAAA6J4umv+MDpG6zEj682zsRaWFWRpltoHMuJZCCRseis7xG5eDGp93bqCA7f7TFaYoIFAMMwczB5EkTzJllEUttmIGoG5bfPBjDawD7CsJC67uWcv2CRov929C/q2ZpcBbYBmLGk6W1BRY4MUDnMvJEsBAXdlknk2fCeRk2iJliAijpBlEmigjR0plKSgpKWvEUheF4tUZqZID1RHjEe8PsDBBwkAIfkECQcABwAsAAAAACIAFQAAA6B4umv+MDpG6zEj682zsRaWFWRpltoHMuJZCCRseis7xG5eDGp93TqS40XiKSYgTLBgIBAMqE/zmQSaZEzns+jQ9pC/5dQJ0VIv5KMVWxqb36opxHrNvu9ptPfGbmsBbgSAeRdydCdjXWRPchQPh1hNAQF4TpM9NnwukpRyi5chGjqJEoSOIh0plaYsZBKvsCuNjY5ptElgDyFIuj6+vwcJACH5BAkHAAcALAAAAAAiABUAAAOfeLrc/vCZSaudUY7Nu99GxhhcYZ7oyYXiQQ5pIZgzCrYuLMd8MbAiUu802flYGIhwaCAQDKpQ86nUoWqF6dP00wIby572SXE6vyMrlmhuu9GKifWaddvNQAtszXYCxgR/Zy5jYTFeXmSDiIZGdQEBd06QSBQ5e4cEkE9nnZQaG2J4F4MSLx8rkqUSZBeurhlTUqsLsi60DpZxSWBJugcJACH5BAkHAAcALAAAAAAiABUAAAOgeLrc/vCZSaudUY7Nu99GxhhcYZ7oyYXiQQ5pIZgzCrYuLMd8MbAiUu802flYGIhwaCAQDKpQ86nUoWqF6dP00wIby572SXE6vyMrlmhuu9GuifWaddvNwMkZtmY7AWMEgGcKY2ExXl5khFMVc0Z1AQF3TpJShDl8iASST2efloV5JTyJFpgOch8dgW9KZxexshGNLqgLtbW0SXFwvaJfCQAh+QQJBwAHACwAAAAAIgAVAAADoXi63P7wmUmrnVGOzbvfRsYYXGGe6MmF4kEOaSGYMwq2LizHfDGwIlLPNKGZfi6gZmggEAy2iVPZEKZqzakq+1xUFFYe90lxTsHmim6HGpvf3eR7skYJ3PC5tyystc0AboFnVXQ9XFJTZIQOYUYFTQEBeWaSVF4bbCeRk1meBJYSL3WbaReMIxQfHXh6jaYXsbEQni6oaF21ERR7l0ksvA0JACH5BAkHAAcALAAAAAAiABUAAAOeeLrc/vCZSaudUY7Nu99GxhhcYZ7oyYXiQQ5pIZgzCrYuLMfFlA4hTITEMxkIBMOuADwmhzqeM6mashTCXKw2TVKQyKuTRSx2wegnNkyJ1ozpOFiMLqcEU8BZHx6NYW8nVlZefQ1tZgQBAXJIi1eHUTRwi0lhl48QL0sogxaGDhMlUo2gh14fHhcVmnOrrxNqrU9joX21Q0IUElm7DQkAOw==') !important;
+   width: 34px !important;
+   height: 21px !important;
+   border: none !important;
+   float:right;
+   margin-top:-7px;
+   margin-right:-10px;
+}
+</style></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav"><li class=""><a href="#voez-稼動後">VOEZ 稼動後</a></li><li><a href="#after-voez-launch">after VOEZ launch</a><ul class="nav"><li><a href="#who-am-i">who am I?</a></li><li><a href="#voez-current-status">VOEZ current status</a><ul class="nav"><li><a href="#spec">spec</a></li><li><a href="#resource">resource</a></li><li><a href="#teaser">teaser</a></li></ul></li><li><a href="#outline">outline</a></li><li><a href="#http-protocol">HTTP protocol</a></li><li><a href="#genuine">genuine</a></li><li><a href="#amp">&amp;</a></li><li><a href="#purchase-verification">purchase verification</a><ul class="nav"><li><a href="#clean-leaderboard-signature">clean leaderboard: signature</a></li><li><a href="#legal-game-play-activation">legal game play: activation</a></li></ul></li><li><a href="#stability">stability</a><ul class="nav"><li><a href="#principle">principle</a></li><li><a href="#publish-order-and-request-order">publish order and request order</a></li><li><a href="#database-cache-mechanism">database cache mechanism</a></li><li><a href="#reliable-inter-server-request">reliable inter-server request</a></li><li><a href="#execution-resource-allocation-for-request-handler-and-for-database">execution resource allocation for request handler and for database</a></li></ul></li><li><a href="#performance">performance</a><ul class="nav"><li><a href="#from-database-to-static-file">from database to static file</a></li><li><a href="#statistics">statistics</a></li><li><a href="#server-operation-with-cdn">server operation with CDN</a></li><li><a href="#service-downtime-and-update">service downtime and update</a></li></ul></li><li><a href="#timezone">timezone</a><ul class="nav"><li><a href="#all-about-environment-variable-tz">all about environment variable: TZ</a></li></ul></li></ul></li><li><a href="#tzasiataipei">TZ=Asia/Taipei </a><ul class="nav"><li><a href="#all-about-environment-variable-tz1">all about environment variable: TZ</a><ul class="nav"><li><a href="#conclusion">conclusion</a></li></ul></li><li><a href="#special-thanks">special thanks</a><ul class="nav"><li><a href="#qampa">Q&amp;A</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav"><li class=""><a href="#voez-稼動後">VOEZ 稼動後</a></li><li><a href="#after-voez-launch">after VOEZ launch</a><ul class="nav"><li><a href="#who-am-i">who am I?</a></li><li><a href="#voez-current-status">VOEZ current status</a><ul class="nav"><li><a href="#spec">spec</a></li><li><a href="#resource">resource</a></li><li><a href="#teaser">teaser</a></li></ul></li><li><a href="#outline">outline</a></li><li><a href="#http-protocol">HTTP protocol</a></li><li><a href="#genuine">genuine</a></li><li><a href="#amp">&amp;</a></li><li><a href="#purchase-verification">purchase verification</a><ul class="nav"><li><a href="#clean-leaderboard-signature">clean leaderboard: signature</a></li><li><a href="#legal-game-play-activation">legal game play: activation</a></li></ul></li><li><a href="#stability">stability</a><ul class="nav"><li><a href="#principle">principle</a></li><li><a href="#publish-order-and-request-order">publish order and request order</a></li><li><a href="#database-cache-mechanism">database cache mechanism</a></li><li><a href="#reliable-inter-server-request">reliable inter-server request</a></li><li><a href="#execution-resource-allocation-for-request-handler-and-for-database">execution resource allocation for request handler and for database</a></li></ul></li><li><a href="#performance">performance</a><ul class="nav"><li><a href="#from-database-to-static-file">from database to static file</a></li><li><a href="#statistics">statistics</a></li><li><a href="#server-operation-with-cdn">server operation with CDN</a></li><li><a href="#service-downtime-and-update">service downtime and update</a></li></ul></li><li><a href="#timezone">timezone</a><ul class="nav"><li><a href="#all-about-environment-variable-tz">all about environment variable: TZ</a></li></ul></li></ul></li><li><a href="#tzasiataipei">TZ=Asia/Taipei </a><ul class="nav"><li><a href="#all-about-environment-variable-tz1">all about environment variable: TZ</a><ul class="nav"><li><a href="#conclusion">conclusion</a></li></ul></li><li><a href="#special-thanks">special thanks</a><ul class="nav"><li><a href="#qampa">Q&amp;A</a></li></ul></li></ul></li></ul></div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>

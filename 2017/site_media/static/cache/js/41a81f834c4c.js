@@ -1,0 +1,8 @@
+(function($){$.fn.actions=function(opts){var options=$.extend({},$.fn.actions.defaults,opts);var actionCheckboxes=$(this);checker=function(checked){$(actionCheckboxes).prop("checked",checked).parent().parent().toggleClass(options.selectedClass,checked);}
+updateCounter=function(){var sel=$(actionCheckboxes).filter(":checked").length;$(options.counterContainer).html(sel);$(options.allToggle).prop("checked",function(){if(sel==actionCheckboxes.length){value=true;}else{value=false;}
+return value;});if(sel==0){$("#next-button").prop("disabled",true);}else{$("#next-button").prop("disabled",false);}}
+$(this).filter(":checked").each(function(i){$(this).parent().parent().toggleClass(options.selectedClass);updateCounter();});$(options.allToggle).click(function(){checker($(this).prop("checked"));updateCounter();});lastChecked=null;$(actionCheckboxes).click(function(event){if(!event){var event=window.event;}
+var target=event.target?event.target:event.srcElement;if(lastChecked&&$.data(lastChecked)!=$.data(target)&&event.shiftKey==true){var inrange=false;$(lastChecked).prop("checked",target.checked).parent().parent().toggleClass(options.selectedClass,target.checked);$(actionCheckboxes).each(function(){if($.data(this)==$.data(lastChecked)||$.data(this)==$.data(target)){inrange=(inrange)?false:true;}
+if(inrange){$(this).prop("checked",target.checked).parent().parent().toggleClass(options.selectedClass,target.checked);}});}
+$(target).parent().parent().toggleClass(options.selectedClass,target.checked);lastChecked=target;updateCounter();});}
+$.fn.actions.defaults={counterContainer:"span.action-counter",allToggle:"#action-toggle",selectedClass:"selected"}})($);$(function(){$("tr input.action-select").actions();});
